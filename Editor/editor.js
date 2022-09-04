@@ -72,7 +72,7 @@ function Editor(node)
 	  this.setSelection();
 	  if ( this.hasFormat("b") == 0)
 	  {
-	    el = document.createElement("b");
+	    const el = document.createElement("b");
 	    el.innerHTML = this.selection.toString();
 	    
 	    if (this.selection.focusOffset != this.selection.anchorOffset)
@@ -114,7 +114,7 @@ function Editor(node)
 	  this.setSelection();
 	  if ( this.hasFormat("i") == 0)
 	  {
-	    el = document.createElement("i");
+	    const el = document.createElement("i");
 	    el.innerHTML = this.selection.toString();
 	    
 	    if (this.selection.focusOffset != this.selection.anchorOffset)
@@ -155,7 +155,7 @@ function Editor(node)
 	  this.setSelection();
 	  if ( this.hasFormat("u") == 0)
 	  {
-	    el = document.createElement("u");
+	   const el = document.createElement("u");
 	    el.innerHTML = this.selection.toString();
 	    
 	    if (this.selection.focusOffset != this.selection.anchorOffset)
@@ -199,7 +199,7 @@ function Editor(node)
 	  {
 	    try
 	    {
-	      img = document.createElement("img");
+	      const img = document.createElement("img");
 	      img.src = url;
 	      img.height=200;
 	      img.align = "left";
@@ -260,7 +260,7 @@ function Editor(node)
 	    this.setSelection();
 	    try
 	    {
-	     ol = document.createElement(type);
+	     const ol = document.createElement(type);
 	     li = document.createElement("li");
 	     ol.appendChild(li);
 	      
@@ -305,7 +305,7 @@ function Editor(node)
     this.setSelection();
     try
     {
-      display = window.getComputedStyle(this.range.startContainer.parentNode).display;
+      const display = window.getComputedStyle(this.range.startContainer.parentNode).display;
       if(display == "block")
       {
         this.range.startContainer.parentNode.style.textAlign = align;
@@ -322,11 +322,11 @@ function Editor(node)
   this.insertTable = function(rows,cols,style)
   {
     this.setSelection();
-    table = document.createElement("table");
+    const table = document.createElement("table");
     table.align = "left";
     table.border= "1";
     
-    for(i = 0; i < rows; i++)
+    for(const i = 0; i < rows; i++)
     {
       row = document.createElement("tr");
       row.height = 200;
